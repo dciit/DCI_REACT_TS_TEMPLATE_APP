@@ -43,20 +43,30 @@ export default {
 
 
 4) ใส่ใน src/index.css
+5) 
 @tailwind base;
+
 @tailwind components;
+
 @tailwind utilities;
 
 #root,body,html {
+
   height: 100%;
+  
   width: 100%;
+  
   padding: 0;
 }
 
 vite.config.ts 
+
 export default defineConfig({
+
   plugins: [react()],
+  
   base : 'projectname/'
+  
 })
 
 
