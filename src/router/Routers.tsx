@@ -24,6 +24,7 @@ const Routers = () => {
             <Routes>
                 <Route element={<Layout />}>
                     <Route path={`/${BASE}`} element={<Home />} />
+                    <Route path={`/${BASE}/home`} element={<Home />} />
                 </Route>
                 <Route path={`/*`} element={<Login />} />
                 <Route path={`${BASE}/login`} element={<Login />} />
