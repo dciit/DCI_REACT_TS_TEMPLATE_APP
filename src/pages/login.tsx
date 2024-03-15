@@ -69,7 +69,7 @@ function Login() {
                             fontSize: '7.5em'
                         }} />
                         <Typography variant='h5' className='font-thin w-full text-center'>Sign in to {APP_NAME}</Typography>
-                        <div className='bg-[#f6f8fa] w-[25%] rounded-[6px] h-auto px-8 pt-4 pb-8 flex flex-col gap-4' style={{ border: '1px solid #d8dee4' }}>
+                        <div className='bg-[#f6f8fa] w-[25%] xs:w-[35%] rounded-[6px] h-auto px-8 pt-4 pb-8 flex flex-col gap-4' style={{ border: '1px solid #d8dee4' }}>
                             <Stack gap={1}>
                                 <Typography variant='caption' className='text-[#1f2328]' >Empcode Or AD Username</Typography>
                                 <TextField className='p-0 bg-white rounded-lg' size='small' value={user} onChange={(e) => {

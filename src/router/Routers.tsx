@@ -19,6 +19,7 @@ const Routers = () => {
             location.reload();
         }
     }, []);
+    console.log(BASE)
     return (
         <BrowserRouter>
             <Routes>

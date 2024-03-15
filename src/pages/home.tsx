@@ -1,6 +1,6 @@
 function Home() {
     return (
-        <div>Welcome to react typescript</div>
+        <div>Welcome to react typescript สวัสดี</div>
     )
 }
 
