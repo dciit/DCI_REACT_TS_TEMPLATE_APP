@@ -1,73 +1,30 @@
-# DCI_REACT_TS_TEMPLATE_APP
-react typescript template + library 3rd + router + redux
+# React + TypeScript + Vite
 
-npm --proxy http://192.168.226.244:8080  create vite@latest
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-npm --proxy http://192.168.226.244:8080 i
+Currently, two official plugins are available:
 
-npm --proxy http://192.168.226.244:8080 i @mui/material @emotion/react @emotion/styled
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-npm --proxy http://192.168.226.244:8080 i moment
+## Expanding the ESLint configuration
 
-npm --proxy http://192.168.226.244:8080 i @mui/icons-material @mui/material @emotion/styled @emotion/react
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-npm --proxy http://192.168.226.244:8080 i react-router-dom
+- Configure the top-level `parserOptions` property like this:
 
-npm --proxy http://192.168.226.244:8080 i react
-
-npm --proxy http://192.168.226.244:8080 i react-redux
-
-npm --proxy http://192.168.226.244:8080 i react-redux redux-persist redux-thunk
-
-npm --proxy http://192.168.226.244:8080 i axios
-
-
-
-
-npm --proxy http://192.168.226.244:8080 i -D tailwindcss@latest postcss@latest autoprefixer@latest
-
-npx tailwindcss init -p
-
-3) เอาใส่ใน tailwind.config.js
-  
+```js
 export default {
-      content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    ],
-    theme: {
-      extend: {},
-    },
-    plugins: [],
-  }
-
-
-4) ใส่ใน src/index.css
-5) 
-@tailwind base;
-
-@tailwind components;
-
-@tailwind utilities;
-
-#root,body,html {
-
-  height: 100%;
-  
-  width: 100%;
-  
-  padding: 0;
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
 }
+```
 
-vite.config.ts 
-
-export default defineConfig({
-
-  plugins: [react()],
-  
-  base : 'projectname/'
-  
-})
-
-
- npm run dev
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
