@@ -17,7 +17,9 @@ const initialState = {
         model: [],
         sebango: [],
         pltype: []
-    }
+    },
+    moduleActive: '',
+    depActive: ''
 }
 
 const IndexReducer = (state = initialState, action: any) => {
@@ -29,6 +31,11 @@ const IndexReducer = (state = initialState, action: any) => {
                 empcode: action.payload.empcode,
                 name: action.payload.name,
                 rev: action.payload.rev
+            }
+        case 'DEP_ACTIVE':
+            return {
+                ...state,
+                depActive: action.payload
             }
         case 'SET_REV':
             return {

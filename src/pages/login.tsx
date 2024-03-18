@@ -1,5 +1,5 @@
 import { Alert, Button, CircularProgress, Stack, TextField, Typography } from '@mui/material'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
@@ -10,6 +10,7 @@ function Login() {
     const APP_NAME = import.meta.env.VITE_APP_NAME;
     const base = import.meta.env.VITE_PATH;
     const APP_VERSION = import.meta.env.VITE_VERSION;
+    const BYPASS_LOGIN = import.meta.env.VITE_LOGIN;
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [user, setUser] = useState<string>('');
@@ -21,6 +22,12 @@ function Login() {
     const [msgError] = useState<string>('ไม่สามารถเข้าสู่ระบบได้ เนื่องจาก ชื่อผู้ใช้หรือรหัสผ่าน ไม่ถูกต้อง');
     const [load, setLoad] = useState<boolean>(false);
     const [error, setError] = useState<boolean>(false);
+    useEffect(() => {
+        if (BYPASS_LOGIN) {
+            dispatch({ type: 'LOGIN', payload: { login: true, data: { id: '12345', name: 'USER' } } });
+            navigate(`/${base}/home`);
+        }
+    }, [])
     async function handleLogin() {
         let state: boolean = true;
         if (!user.length) {

@@ -15,3 +15,15 @@ html {
   padding: 0;
   font-family: 'MyFont';
 }
+
+#main {
+  background: #181818;
+  background: #eeeeee;
+}
+
+#tbBorder,
+#tbBorder th,
+#tbBorder td {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}

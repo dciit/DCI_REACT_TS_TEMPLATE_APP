@@ -18,7 +18,7 @@ function ToolbarComponent() {
         }
     }
     return (
-        <Stack className='toolbar h-[35px] bg-black' justifyContent={'space-between'} px={2} style={{borderBottom:'1px solid rgb(221 221 221 / 17%)'}}>
+        <Stack className='toolbar h-[35px]' justifyContent={'space-between'} px={2} style={{borderBottom:'1px solid rgb(221 221 221 / 5%)'}}>
             <Stack className='select-none flex-1 cursor-pointer ' direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
                 <Stack className='hover:scale-105  transform-all duration-300' direction={'row'} justifyContent={'center'} alignItems={'center'} gap={1}>
                     <img  className='animate-spin w-4' src={logo} />
